@@ -1,0 +1,199 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Model Parameters
+#--------------------------------------------------------------------------------------------
+
+Model.sh_degree: 3 # maximum
+Model.resolution: -1.0
+Model.white_background: 0  # 0:false, 1 or other integer:true
+Model.eval: 0  # 0:false, 1 or other integer:true
+
+# anchor Parameters
+Model.feat_dim: 32
+Model.n_offsets: 10
+Model.voxel_size:  0.001 # if voxel_size<=0, using 1nn dist
+Model.update_depth: 3
+Model.update_init_factor: 16
+Model.update_hierachy_factor: 4
+
+Model.use_feat_bank: 0 #0 #False
+Model.appearance_dim: 32 #32
+Model.lowpoly: 0  # 0:false, 1 or other integer:true
+Model.ds: 1
+Model.ratio: 1 # sampling the input point cloud
+Model.undistorted: 0  # 0:false, 1 or other integer:true
+Model.embedding_dim: 300 #150
+
+# In the Bungeenerf dataset, we propose to set the following three parameters to True,
+# Because there are enough dist variations.
+Model.add_opacity_dist: 0  # 0:false, 1 or other integer:true
+Model.add_cov_dist: 0  # 0:false, 1 or other integer:true
+Model.add_color_dist: 0  # 0:false, 1 or other integer:true
+#--------------------------------------------------------------------------------------------
+# Pipeline Parameters
+#--------------------------------------------------------------------------------------------
+
+Camera.z_near: 0.01
+Camera.z_far: 100.0
+Monocular.inactive_geo_densify_max_pixel_dist: 0.0 # (squared distance)
+Stereo.min_disparity: 8
+Stereo.num_disparity: 128
+RGBD.min_depth: 0.0000000001
+RGBD.max_depth: 40.0
+
+Mapper.inactive_geo_densify: 0  # 0:false, 1 or other integer:true
+Mapper.depth_cache: 10
+Mapper.min_num_initial_map_kfs: 10
+Mapper.new_keyframe_times_of_use: 2
+Mapper.local_BA_increased_times_of_use: 0
+Mapper.loop_closure_increased_times_of_use_: 2
+Mapper.cull_keyframes: 0  # 0:false, 1 or other integer:true
+Mapper.large_rotation_threshold: 30.0
+Mapper.large_translation_threshold: 1.0
+Mapper.stable_num_iter_existence: 1
+
+GausPyramid.do: 0  # 0:false, 1 or other integer:true
+GausPyramid.num_sub_levels: 2
+GausPyramid.sub_level_times_of_use: 8
+
+Pipeline.convert_SHs: 0  # 0:false, 1 or other integer:true
+Pipeline.compute_cov3D: 0  # 0:false, 1 or other integer:true
+
+Record.keyframe_record_interval: 0 # 0:never, 1:always, others:periodically
+Record.all_keyframes_record_interval: 0 # 0:never, 1:always, others:periodically
+Record.record_rendered_image: 1 # 0:false, 1 or other integer:true
+Record.record_ground_truth_image: 1 # 0:false, 1 or other integer:true
+Record.record_debug_image: 0 # 0:false, 1 or other integer:true
+Record.record_loss_image: 0 # 0:false, 1 or other integer:true
+Record.training_report_interval: 0 # 0:never, 1:always, others:periodically
+Record.record_loop_ply: 0 # 0:false, 1 or other integer:true
+
+#--------------------------------------------------------------------------------------------
+# Optimization Parameters
+#--------------------------------------------------------------------------------------------
+
+# Learning rate
+Optimization.max_num_iterations: 30000
+Optimization.position_lr_init: 0.0 #0.00016 #0.0
+Optimization.position_lr_final: 0.0 #0.0000016 #0.0
+Optimization.position_lr_delay_mult: 0.01 #0.01
+Optimization.position_lr_max_steps: 30000
+Optimization.feature_lr: 0.0075 #0.0075 #0.0075
+Optimization.opacity_lr: 0.05 #0.02 #0.05
+Optimization.scaling_lr: 0.005 #0.007 #0.005
+Optimization.rotation_lr: 0.001 #0.002 #0.001
+
+# Densification
+Optimization.percent_dense: 0.01
+Optimization.lambda_dssim: 0.2
+
+#anchor
+Optimization.offset_lr_init: 0.01 #有问题
+Optimization.offset_lr_final: 0.0001
+Optimization.offset_lr_delay_mult: 0.01
+Optimization.offset_lr_max_steps: 30000
+
+Optimization.mlp_opacity_lr_init: 0.002 #0.002 #here
+Optimization.mlp_opacity_lr_final: 0.00002   #0.00002
+Optimization.mlp_opacity_lr_delay_mult: 0.01 #0.01
+Optimization.mlp_opacity_lr_max_steps: 30000
+
+Optimization.mlp_cov_lr_init: 0.004
+Optimization.mlp_cov_lr_final: 0.004
+Optimization.mlp_cov_lr_delay_mult: 0.01
+Optimization.mlp_cov_lr_max_steps: 30000
+
+Optimization.mlp_color_lr_init: 0.008
+Optimization.mlp_color_lr_final: 0.00005
+Optimization.mlp_color_lr_delay_mult: 0.01
+Optimization.mlp_color_lr_max_steps: 30000
+
+Optimization.mlp_featurebank_lr_init: 0.01
+Optimization.mlp_featurebank_lr_final: 0.00001
+Optimization.mlp_featurebank_lr_delay_mult: 0.01
+Optimization.mlp_featurebank_lr_max_steps: 30000
+
+Optimization.appearance_lr_init: 0.05
+Optimization.appearance_lr_final: 0.0005
+Optimization.appearance_lr_delay_mult: 0.01
+Optimization.appearance_lr_max_steps: 30000
+
+# for anchor densification
+Optimization.start_stat: 500
+Optimization.update_from: 1500
+Optimization.update_interval: 100
+Optimization.update_until: 25000
+
+Optimization.min_opacity: 0.005
+Optimization.success_threshold: 0.8
+Optimization.densify_grad_threshold: 0.0002
+
+#for frequency regulization
+Mapper.use_frequency_regularization: 0  # 0:false, 1 or other integer:true
+Mapper.use_multi_resolution: 1 # 0:false, 1 or other integer:true
+Mapper.scale_num: 3 
+Mapper.frequency_regulization_until: 15000
+Mapper.high_frequency_regularization_start: 5000
+Mapper.lambda_frequency_high: 0.01
+Mapper.lambda_frequency_low: 0
+
+#--------------------------------------------------------------------------------------------
+# Coarse anchor
+#--------------------------------------------------------------------------------------------
+# anchor Parameters
+Model.use_coarse_anchor: 0 #0(fasle)
+Model.feat_dim_coarse: 32
+Model.n_offsets_coarse: 10
+Model.coarse_voxel_size:  0.2 # if voxel_size<=0, using 1nn dist
+Model.appearance_dim_coarse: 32 #32
+
+# Learning rate
+Optimization.anchor_lr_init_coarse: 0.0 #0.00016 #0.0
+Optimization.anchor_lr_final_coarse: 0.0 #0.0000016 #0.0
+Optimization.anchor_lr_delay_mult_coarse: 0.01 #0.01
+Optimization.anchor_lr_max_steps_coarse: 30000
+Optimization.feature_lr_coarse: 0.0075 #0.0075 #0.0075
+Optimization.opacity_lr_coarse: 0.02 #0.02 #0.05
+Optimization.scaling_lr_coarse: 0.007 #0.007 #0.005
+Optimization.rotation_lr_coarse: 0.002 #0.002 #0.001
+
+Optimization.offset_lr_init_coarse: 0.008 #有问题
+Optimization.offset_lr_final_coarse: 0.0001
+Optimization.offset_lr_delay_mult_coarse: 0.01
+Optimization.offset_lr_max_steps_coarse: 30000
+
+Optimization.mlp_opacity_lr_init_coarse: 0.002 #有问题
+Optimization.mlp_opacity_lr_final_coarse: 0.00002  
+Optimization.mlp_opacity_lr_delay_mult_coarse: 0.01
+Optimization.mlp_opacity_lr_max_steps_coarse: 30000
+
+Optimization.mlp_cov_lr_init_coarse: 0.004
+Optimization.mlp_cov_lr_final_coarse: 0.004
+Optimization.mlp_cov_lr_delay_mult_coarse: 0.01
+Optimization.mlp_cov_lr_max_steps_coarse: 30000
+
+Optimization.mlp_color_lr_init_coarse: 0.008
+Optimization.mlp_color_lr_final_coarse: 0.00005
+Optimization.mlp_color_lr_delay_mult_coarse: 0.01
+Optimization.mlp_color_lr_max_steps_coarse: 30000
+
+Optimization.mlp_featurebank_lr_init_coarse: 0.01
+Optimization.mlp_featurebank_lr_final_coarse: 0.00001
+Optimization.mlp_featurebank_lr_delay_mult_coarse: 0.01
+Optimization.mlp_featurebank_lr_max_steps_coarse: 30000
+
+Optimization.appearance_lr_init_coarse: 0.05
+Optimization.appearance_lr_final_coarse: 0.0005
+Optimization.appearance_lr_delay_mult_coarse: 0.01
+Optimization.appearance_lr_max_steps_coarse: 30000
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+
+GaussianViewer.glfw_window_width: 1400
+GaussianViewer.glfw_window_height: 1050
+GaussianViewer.image_scale: 0.5
+GaussianViewer.image_scale_main: 1.0
+GaussianViewer.camera_watch_dist: 0.000001
