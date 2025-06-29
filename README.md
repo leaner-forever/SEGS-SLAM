@@ -233,7 +233,7 @@ Please make sure that `set(Torch_DIR /home/lzy/dependency/libtorch/share/cmake/T
 ```
 git clone https://github.com/leaner-forever/SEGS-SLAM
 
-cd /SEGS-SLAM
+cd SEGS-SLAM
 cd ORB-SLAM3/Vocabulary/
 tar -xf ORBvoc.txt.tar.gz
 cd ../..

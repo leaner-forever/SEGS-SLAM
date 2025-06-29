@@ -38,8 +38,8 @@ mkdir build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/usr/local/lib/cmake/opencv4 # add OpenCV_DIR definitions if needed, example:
 #cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
-make -j128
-# make -j8
+# make -j128
+make -j8
 
 
 # Photo-SLAM
@@ -49,5 +49,5 @@ mkdir build
 cd build
 # cmake .. # add Torch_DIR and/or OpenCV_DIR definitions if needed, example: Debug
 cmake .. -DOpenCV_DIR=/usr/local/lib/cmake/opencv4
-make -j128
-# make -j8
+# make -j128
+make -j8
