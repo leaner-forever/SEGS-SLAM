@@ -2,7 +2,7 @@
 
 SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding
 ### ICCV 2025
-### ✨[Homepage](https://segs-slam.github.io/)✨ 📝[SEGS-SLAM zhihu](https://zhuanlan.zhihu.com/p/1922411865323045454/preview?comment=0&catalog=0)📝
+### ✨[Homepage](https://segs-slam.github.io/)✨ 📝[paper](https://arxiv.org/abs/2501.05242)📝  📝[SEGS-SLAM zhihu](https://zhuanlan.zhihu.com/p/1922411865323045454/preview?comment=0&catalog=0)📝
 
 ## 📣 News
 ### 📢  Current Status:
