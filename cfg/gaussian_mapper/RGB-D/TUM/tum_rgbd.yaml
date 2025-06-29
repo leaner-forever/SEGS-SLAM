@@ -150,50 +150,6 @@ Mapper.lambda_frequency_low: 0 #0.05
 #--------------------------------------------------------------------------------------------
 # anchor Parameters
 Model.use_coarse_anchor: 0 #0(fasle)
-Model.feat_dim_coarse: 32
-Model.n_offsets_coarse: 10
-Model.coarse_voxel_size:  0.2 # if voxel_size<=0, using 1nn dist
-Model.appearance_dim_coarse: 32 #32
-
-# Learning rate
-Optimization.anchor_lr_init_coarse: 0.0 #0.00016 #0.0
-Optimization.anchor_lr_final_coarse: 0.0 #0.0000016 #0.0
-Optimization.anchor_lr_delay_mult_coarse: 0.01 #0.01
-Optimization.anchor_lr_max_steps_coarse: 30000
-Optimization.feature_lr_coarse: 0.0075 #0.0075 #0.0075
-Optimization.opacity_lr_coarse: 0.02 #0.02 #0.05
-Optimization.scaling_lr_coarse: 0.007 #0.007 #0.005
-Optimization.rotation_lr_coarse: 0.002 #0.002 #0.001
-
-Optimization.offset_lr_init_coarse: 0.008 #有问题
-Optimization.offset_lr_final_coarse: 0.0001
-Optimization.offset_lr_delay_mult_coarse: 0.01
-Optimization.offset_lr_max_steps_coarse: 30000
-
-Optimization.mlp_opacity_lr_init_coarse: 0.002 #有问题
-Optimization.mlp_opacity_lr_final_coarse: 0.00002  
-Optimization.mlp_opacity_lr_delay_mult_coarse: 0.01
-Optimization.mlp_opacity_lr_max_steps_coarse: 30000
-
-Optimization.mlp_cov_lr_init_coarse: 0.004
-Optimization.mlp_cov_lr_final_coarse: 0.004
-Optimization.mlp_cov_lr_delay_mult_coarse: 0.01
-Optimization.mlp_cov_lr_max_steps_coarse: 30000
-
-Optimization.mlp_color_lr_init_coarse: 0.008
-Optimization.mlp_color_lr_final_coarse: 0.00005
-Optimization.mlp_color_lr_delay_mult_coarse: 0.01
-Optimization.mlp_color_lr_max_steps_coarse: 30000
-
-Optimization.mlp_featurebank_lr_init_coarse: 0.01
-Optimization.mlp_featurebank_lr_final_coarse: 0.00001
-Optimization.mlp_featurebank_lr_delay_mult_coarse: 0.01
-Optimization.mlp_featurebank_lr_max_steps_coarse: 30000
-
-Optimization.appearance_lr_init_coarse: 0.05
-Optimization.appearance_lr_final_coarse: 0.0005
-Optimization.appearance_lr_delay_mult_coarse: 0.01
-Optimization.appearance_lr_max_steps_coarse: 30000
 #--------------------------------------------------------------------------------------------
 # Viewer Parameters
 #--------------------------------------------------------------------------------------------

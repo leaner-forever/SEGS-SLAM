@@ -78,18 +78,18 @@ conda activate gaussian_splatting
 python onekey.py --dataset_center_path "/home/lzy/workingspace/MonoGS/datasets/" --result_main_folder "/home/lzy/workingspace/Scaffold-GS-cpp/results/"
 
 
-./bin/replica_mono \
-    ./ORB-SLAM3/Vocabulary/ORBvoc.txt \
-    ./cfg/ORB_SLAM3/Monocular/Replica/office0.yaml \
-    ./cfg/gaussian_mapper/Monocular/Replica/replica_mono.yaml \
-    /home/lzy/workingspace/MonoGS/datasets/replica/office0 \
-    ./results/replica_mono_$i/office0 \
-    no_viewer
+# ./bin/replica_mono \
+#     ./ORB-SLAM3/Vocabulary/ORBvoc.txt \
+#     ./cfg/ORB_SLAM3/Monocular/Replica/office0.yaml \
+#     ./cfg/gaussian_mapper/Monocular/Replica/replica_mono.yaml \
+#     /home/lzy/workingspace/MonoGS/datasets/replica/office0 \
+#     ./results/replica_mono_$i/office0 \
+#     no_viewer
 
-./bin/replica_mono \
-    ./ORB-SLAM3/Vocabulary/ORBvoc.txt \
-    ./cfg/ORB_SLAM3/Monocular/Replica/office1.yaml \
-    ./cfg/gaussian_mapper/Monocular/Replica/replica_mono.yaml \
-    /home/lzy/workingspace/MonoGS/datasets/replica/office1 \
-    ./results/replica_mono_$i/office1 \
-    no_viewer
+# ./bin/replica_mono \
+#     ./ORB-SLAM3/Vocabulary/ORBvoc.txt \
+#     ./cfg/ORB_SLAM3/Monocular/Replica/office1.yaml \
+#     ./cfg/gaussian_mapper/Monocular/Replica/replica_mono.yaml \
+#     /home/lzy/workingspace/MonoGS/datasets/replica/office1 \
+#     ./results/replica_mono_$i/office1 \
+#     no_viewer
