@@ -156,6 +156,6 @@ RUN mkdir /opencv/opencv-4.8.0/build && cd /opencv/opencv-4.8.0/build && \
 
 
 # repo
-RUN git clone https://github.com/prgs-slam/PRGS-SLAM.git /PRGS-SLAM
+RUN git clone https://github.com/leaner-forever/SEGS-SLAM /SEGS-SLAM
 
-WORKDIR /PRGS-SLAM
+WORKDIR /SEGS-SLAM

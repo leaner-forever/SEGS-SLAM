@@ -35,7 +35,7 @@ sudo systemctl restart docker
 Build the docker container
 
 ```
-git clone https://github.com/segs-slam/SEGS-SLAM.git
+git clone https://github.com/leaner-forever/SEGS-SLAM
 cd SEGS-SLAM/docker
 docker build -t SEGS-slam-image .
 docker images
@@ -228,17 +228,17 @@ make install
 ```
 
 ## 3 Installation of SEGS-SLAM
-(optional) Download the repository. If you use docker, you don't need to download again.
+Download the repository. If you use docker, you don't need to download again.
+Please make sure that `set(Torch_DIR /home/lzy/dependency/libtorch/share/cmake/Torch)` has been changed correctly at 23 line of CMakeLists.txt.
 ```
-git clone https://github.com/segs-slam/SEGS-SLAM.git
-```
-Add `LD_LIBRARY_PATH`
-```
+git clone https://github.com/leaner-forever/SEGS-SLAM
+
 cd /SEGS-SLAM
 cd ORB-SLAM3/Vocabulary/
 tar -xf ORBvoc.txt.tar.gz
 cd ../..
-export LD_LIBRARY_PATH=/SEGS-SLAM/lib/:/SEGS-SLAM/ORB-SLAM3/lib/:/SEGS-SLAM/ORB-SLAM3/Thirdparty/DBoW2/lib/:/SEGS-SLAM/ORB-SLAM3/Thirdparty/g2o/lib/
+chmod +x ./build.sh
+./build.sh
 ```
 ## 4 SEGS-SLAM Examples on Some Benchmark Datasets
 
@@ -251,6 +251,19 @@ chmod +x ./*.sh
 ./download_replica.sh
 ./download_tum.sh
 ./download_euroc.sh
+```
+!!! For scannet dataset, we can't provide a direct download link. NICE-SLAM provide a script to download scene0000. For all sequence we used, please follow the data downloading procedure on the [ScanNet](http://www.scan-net.org/) website, and extract color/depth frames from the `.sens` file using this [code](https://github.com/ScanNet/ScanNet/blob/master/SensReader/python/reader.py).
+
+
+We use the following sequences: 
+```
+scene0000_00
+scene0059_00
+scene0106_00
+scene0169_00
+scene0181_00
+scene0207_00
+scene0472_00
 ```
 ### Run
 1. For testing, you could use the below commands to run the system after specifying the `PATH_TO_tum` and `PATH_TO_SAVE_RESULTS`. Currently, the viewer is developping, we would disable the viewer by adding `no_viewer` during the evaluation.
@@ -277,11 +290,13 @@ chmod +x ./*.sh
 ./tum_mono.sh
 ./tum_rgbd.sh
 ./euroc_stereo.sh
+./scannet_rgbd.sh
 # etc.
 ```
 
 ## 5 Evaluation 
-### Prerequisites
+Coming Soon...
+<!-- ### Prerequisites
 To use this toolkit, you have to ensure your results on each dataset are stored in the correct format. For example, 
 ```
 results
@@ -316,10 +331,12 @@ Since images on some sequences of TUM dataset contain distortion, we need to und
 In addition, the file `camera.yaml` is used as an indicator in `run.py`.
 ```
 cp TUM/fr1/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg1_desk
-cp TUM/fr2/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg2_xyz
+cp TUM/fr2/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg2_xyz -->
 ```
 
 ### Run & Evaluation
+Coming Soon...
+<!-- ### Run & Evaluation
 To get all the metrics, you can run 
 ```
 python onekey.py --dataset_center_path PATH_TO_ALL_DATASET --result_main_folder RESULTS_PATH
@@ -331,14 +348,14 @@ If all the environments are set up, you can evaluate the performance of our algo
 cd SEGS-SLAM/scripts
 chmod +x ./*.sh
 ./all.sh
-```
+``` -->
 
 Citation
 @inproceedings{tianci2025segsslam,
 	title = {SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embedding},
 	author = {Tianci Wen, Zhiang Liu, Yongchun Fang },
 	booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision},
-	year = {2024}
+	year = {2025}
 }
 
 
