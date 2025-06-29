@@ -155,7 +155,7 @@ int main(int argc, char **argv)
         cv::cvtColor(imRGB, imRGB, CV_BGR2RGB);
         imD = cv::imread(vstrImageFilenamesD[ni], cv::IMREAD_UNCHANGED);
         double tframe = ni;
-        std::cout << ni << " " << imRGB.type() << " " << imD.type()<< std::endl;
+        // std::cout << ni << " " << imRGB.type() << " " << imD.type()<< std::endl;
 
         cv::Mat undistorted_img;
         if (has_undistorted_image)
