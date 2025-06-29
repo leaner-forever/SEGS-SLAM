@@ -337,12 +337,12 @@ Since images on some sequences of TUM dataset contain distortion, we need to und
 In addition, the file `camera.yaml` is used as an indicator in `run.py`.
 ```
 cp TUM/fr1/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg1_desk
-cp TUM/fr2/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg2_xyz -->
-```
+cp TUM/fr2/camera.yaml PATH_TO_TUM_DATASET/rgbd_dataset_freiburg2_xyz 
+```-->
 
-### Run & Evaluation
-Coming Soon...
 <!-- ### Run & Evaluation
+Coming Soon...
+ ### Run & Evaluation
 To get all the metrics, you can run 
 ```
 python onekey.py --dataset_center_path PATH_TO_ALL_DATASET --result_main_folder RESULTS_PATH
@@ -354,7 +354,7 @@ If all the environments are set up, you can evaluate the performance of our algo
 cd SEGS-SLAM/scripts
 chmod +x ./*.sh
 ./all.sh
-``` -->
+```  -->
 
 Citation
 @inproceedings{tianci2025segsslam,
