@@ -6,7 +6,12 @@ SEGS-SLAM: Structure-enhanced 3D Gaussian Splatting SLAM with Appearance Embeddi
 
 ## 📣 News
 ### 📢  Current Status:
-- ✅ **[2025.06.28]** Official code  publish. Enjoying it 😊😊😊. 
+- TODO: 
+1. Evaluation code release. I'm going to finish the code this weekend.
+2. Clean code for easier reading, Which will be a slowly process.
+3. A viewer.
+4. Support and test for real-world RealSense camera, which will be useful for roboticis.
+- ✅ **[2025.06.28]** Official code publish. Enjoying it 😊😊😊. 
 - ✅ **[2025.06.28]** We write a brief introduction for our paper at [SEGS-SLAM zhihu](https://zhuanlan.zhihu.com/p/1922411865323045454/preview?comment=0&catalog=0).
 - ✅ **[2025.06.26]** Our paper is accepted by ICCV 2025 🎉🎉🎉.
 - ✅ **[2024.12.26]** Open-sourced executable files are available at https://github.com/segs-slam/SEGS-SLAM for running our algorithm without compilation. Enjoying it 😊😊😊.
