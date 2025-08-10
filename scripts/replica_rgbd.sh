@@ -1,6 +1,5 @@
 #!/bin/bash
-for i in 0
-# for i in 0 1 2 3 4
+for i in 0 1 2 3 4
 do
 ../bin/replica_rgbd \
     ../ORB-SLAM3/Vocabulary/ORBvoc.txt \
@@ -74,13 +73,4 @@ cd eval
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate gaussian_splatting
 
-python onekey.py --dataset_center_path "/home/lzy/workingspace/MonoGS/datasets/" --result_main_folder "/home/lzy/workingspace/Scaffold-GS-cpp/results/"
-
-# ./bin/replica_rgbd \
-#     ./ORB-SLAM3/Vocabulary/ORBvoc.txt \
-#     ./cfg/ORB_SLAM3/RGB-D/Replica/office0.yaml \
-#     ./cfg/gaussian_mapper/RGB-D/Replica/replica_rgbd.yaml \
-#     /home/lzy/workingspace/MonoGS/datasets/replica/office0 \
-#     ./results/replica_rgbd_/office0 \
-#     no_viewer\
-#     undistorted_image
+python onekey.py --dataset_center_path "/home/lzy/workingspace/MonoGS/datasets/" --result_main_folder "/home/lzy/workingspace/SEGS-SLAM/results/"

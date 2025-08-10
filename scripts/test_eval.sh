@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #5 is for test
-for i in 5
+for i in 0 1 2 3 4
 do
 
 ../bin/replica_mono \
@@ -231,4 +231,4 @@ cd eval
 source ~/miniconda3/etc/profile.d/conda.sh
 conda activate gaussian_splatting
 
-python onekey.py --dataset_center_path "/home/lzy/workingspace/MonoGS/datasets/" --result_main_folder "/home/lzy/workingspace/Scaffold-GS-cpp/results/"
+python onekey.py --dataset_center_path "/home/lzy/workingspace/MonoGS/datasets/" --result_main_folder "/home/lzy/workingspace/SEGS-SLAM/results/"

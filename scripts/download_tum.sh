@@ -6,4 +6,13 @@ wget https://vision.in.tum.de/rgbd/dataset/freiburg2/rgbd_dataset_freiburg2_xyz.
 tar -xvzf rgbd_dataset_freiburg2_xyz.tgz
 wget https://vision.in.tum.de/rgbd/dataset/freiburg3/rgbd_dataset_freiburg3_long_office_household.tgz
 tar -xvzf rgbd_dataset_freiburg3_long_office_household.tgz
+
+cd ../data/TUM/rgbd_dataset_freiburg1_desk
+mkdir -p undistorted_images
+cp -r rgb/* undistorted_images/
+
+cd ../data/TUM/rgbd_dataset_freiburg2_xyz
+mkdir -p undistorted_images
+cp -r rgb/* undistorted_images/
+
 cd scripts
