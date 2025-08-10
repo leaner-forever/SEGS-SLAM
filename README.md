@@ -25,7 +25,7 @@
 
 ## 🎯 Overview
 
-SEGS-SLAM is a cutting-edge **Structure-enhanced 3D Gaussian Splatting SLAM** system that combines the power of traditional SLAM with modern neural rendering techniques. It leverages 3D Gaussian Splatting for high-quality scene reconstruction while maintaining real-time performance and robust tracking capabilities.
+SEGS-SLAM is a cutting-edge **Structure-enhanced 3D Gaussian Splatting SLAM** system that combines the power of traditional SLAM with modern neural rendering techniques. It leverages 3D Gaussian Splatting for high-quality scene reconstruction while maintaining robust tracking capabilities.
 
 ### 🌟 Key Features
 
