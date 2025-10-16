@@ -14,9 +14,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
 
 set(CAFFE2_USE_CUDNN on)
 
-set(Boost_LIBRARY_DIR /usr/lib/x86_64-linux-gnu/)
-# set(PCL_DIR /home/lzy/dependency/pcl/build)
-find_package(PCL REQUIRED)
+
 # Uncomment the following line if you want to solve CMake Warning "Failed to compute shorthash for libnvrtc.so"
 # set(PYTHON_EXECUTABLE "/usr/bin/python3")
 # set(Torch_DIR /home/lzy/workingspace/Photo-SLAM/Torch/libtorch/share/cmake/Torch)
@@ -66,7 +64,6 @@ include_directories(
     ${ORB_SLAM3_SOURCE_DIR}/Thirdparty/Sophus
     ${EIGEN3_INCLUDE_DIR}
     ${OPENGL_INCLUDE_DIR}
-    ${PCL_INCLUDE_DIRS}
     ${TorchScatter_INCLUDE_DIRS})
 
 ##################################################################################
@@ -180,7 +177,6 @@ target_link_libraries(gaussian_mapper
     Eigen3::Eigen
     simple_knn
     cuda_rasterizer
-    ${PCL_LIBRARIES}
     /usr/local/lib/libtorchscatter.so
     ${OpenMP_CXX_FLAGS})
 

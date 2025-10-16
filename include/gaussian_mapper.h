@@ -40,13 +40,6 @@
 
 #include <jsoncpp/json/json.h>
 
-#include <pcl/point_cloud.h>
-#include <pcl/point_types.h>
-#include <pcl/filters/voxel_grid.h>
-#include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/common/transforms.h>
-#include <condition_variable>
-#include <pcl/visualization/cloud_viewer.h>
 
 #include "ORB-SLAM3/include/System.h"
 #include "ORB-SLAM3/Thirdparty/Sophus/sophus/se3.hpp"
@@ -280,11 +273,6 @@ public:
     std::map<camera_id_t, torch::Tensor> viewer_main_undistort_mask_;
     std::map<camera_id_t, torch::Tensor> viewer_sub_undistort_mask_;
 
-    pcl::KdTreeFLANN<pcl::PointXYZRGB>::Ptr kdtreePointsfull;
-    pcl::PointCloud<pcl::PointXYZRGB>::Ptr pointCloud;
-    pcl::VoxelGrid<pcl::PointXYZRGBL> downSizeFilter;
-    pcl::VoxelGrid<pcl::PointXYZRGB> downSizeFilter1;
-    pcl::VoxelGrid<pcl::PointXYZRGB> downSizeFilter2;
     float filterResolution=0.01;
 
     int num_cameras_;

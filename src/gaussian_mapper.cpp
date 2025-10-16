@@ -216,9 +216,6 @@ GaussianMapper::GaussianMapper(
         this->scene_->addCamera(camera);
     }
 
-    kdtreePointsfull.reset(new pcl::KdTreeFLANN<pcl::PointXYZRGB>());
-    pointCloud.reset(new pcl::PointCloud<pcl::PointXYZRGB>());
-
 }
 
 void GaussianMapper::readConfigFromFile(std::filesystem::path cfg_path)
