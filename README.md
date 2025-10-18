@@ -87,7 +87,7 @@ docker images
 sudo docker run --gpus all -it --name segs-slam segs-slam-image /bin/bash
 ```
 
-Then you can go to [Installation of SEGS-SLAM](#3-installation-of-segs-slam)directly.
+Then you can go to [📦 Installation](https://github.com/leaner-forever/SEGS-SLAM/blob/master/README.md#-installation)directly. 
 
 ### 2.2 Prerequisites
 
@@ -108,7 +108,6 @@ sudo apt install libeigen3-dev libboost-all-dev libjsoncpp-dev libopengl-dev mes
 | **[OpenCV](https://opencv.org/releases)** (with opencv_contrib and CUDA)                   | 4.7.0, 4.8.0                           |
 | **[LibTorch](https://pytorch.org/get-started/locally)**                                    | cxx11-abi-shared-with-deps-2.0.1+cu118 |
 | **[TorchScatter](https://pypi.org/project/torch-scatter/#description)**                    | 2.1.2                                  |
-| **[PCL](https://github.com/PointCloudLibrary/pcl)**                                        | 1.14.1                                 |
 | **[Intel® RealSense™ SDK 2.0](https://github.com/IntelRealSense/librealsense)** (optional) | Latest                                 |
 
 #### Using LibTorch
@@ -168,50 +167,6 @@ cmake -DCMAKE_PREFIX_PATH=/libtorch/share/cmake/Torch \
     ..  
 make  
 make install 
-```
-
-#### PCL Installation
-
-The Point Cloud Library (PCL) processes 2D/3D images and point clouds.
-
-**Installing VTK** (PCL dependency):
-```bash
-# Download VTK 9.3.0 from https://github.com/Kitware/VTK/archive/refs/tags/v9.3.0.zip
-cd /vtk/VTK-9.3.0 
-mkdir build && cd build 
-
-cmake -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr/local \
-    -DVTK_RENDERING_BACKEND=OpenGL2 \
-    -DVTK_USE_X=OFF \
-    -DVTK_USE_COCOA=OFF \
-    -DVTK_USE_OPENGL2=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DVTK_USE_SYSTEM_GLFW=ON \
-    -DBUILD_EXAMPLES=OFF \
-    -DVTK_OPENGL_HAS_OSMESA=ON \
-    -DVTK_USE_OSMESA=OFF \
-    .. 
-
-make -j64 
-make install
-```
-
-**Installing PCL**:
-```bash
-# Download PCL 1.14.1 from https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.14.1.tar.gz
-cd pcl-pcl-1.14.1 
-mkdir build 
-cd build 
-
-cmake -DCMAKE_BUILD_TYPE=Release \
-    -DWITH_PCL_VISUALIZATION=OFF \
-    -DBUILD_visualization=OFF \
-    -DBUILD_tools=OFF \
-    .. 
-
-make -j64 
-make install
 ```
 
 ## 📦 Installation

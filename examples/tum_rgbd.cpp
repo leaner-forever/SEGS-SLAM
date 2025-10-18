@@ -172,7 +172,7 @@ int main(int argc, char **argv)
         imD = cv::imread(std::string(argv[4]) + "/" + vstrImageFilenamesD[ni], cv::IMREAD_UNCHANGED);
         double tframe = vTimestamps[ni];
 
-        std::cout << ni << " " << imRGB.type() << " " << imD.type()<< std::endl;
+        // std::cout << ni << " " << imRGB.type() << " " << imD.type()<< std::endl;
 
         cv::Mat undistorted_img;
         if (has_undistorted_image)
