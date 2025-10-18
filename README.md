@@ -87,7 +87,7 @@ docker images
 sudo docker run --gpus all -it --name segs-slam segs-slam-image /bin/bash
 ```
 
-Then you can go to [Installation of SEGS-SLAM](## 📦 Installation)directly.
+Then you can go to [Installation of SEGS-SLAM](#3-installation-of-segs-slam)directly.
 
 ### 2.2 Prerequisites
 
