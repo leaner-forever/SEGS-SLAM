@@ -8,7 +8,7 @@
 cd ./ORB-SLAM3/Thirdparty/DBoW2
 mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release  -DOpenCV_DIR=/usr/local/lib/cmake/opencv4# add OpenCV_DIR definitions if needed, example:
+cmake .. -DCMAKE_BUILD_TYPE=Release # add OpenCV_DIR definitions if needed, example:
 #cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
 make -j
 
@@ -36,18 +36,15 @@ cd ..
 
 mkdir build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/usr/local/lib/cmake/opencv4 # add OpenCV_DIR definitions if needed, example:
+cmake .. -DCMAKE_BUILD_TYPE=Release # add OpenCV_DIR definitions if needed, example:
 #cmake .. -DCMAKE_BUILD_TYPE=Release -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
-# make -j128
 make -j8
 
-
 # Photo-SLAM
-echo "Building Photo-SLAM ..."
+echo "Building SEGS-SLAM ..."
 cd ../..
 mkdir build
 cd build
-# cmake .. # add Torch_DIR and/or OpenCV_DIR definitions if needed, example: Debug
-cmake .. -DOpenCV_DIR=/usr/local/lib/cmake/opencv4
-# make -j128
+cmake .. # add Torch_DIR and/or OpenCV_DIR definitions if needed, example:
+#cmake .. -DTorch_DIR=/home/rapidlab/libs/libtorch/share/cmake/Torch -DOpenCV_DIR=/home/rapidlab/libs/opencv/lib/cmake/opencv4
 make -j8

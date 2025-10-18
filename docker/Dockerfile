@@ -38,14 +38,6 @@ RUN apt-get install -y \
     libswscale-dev \
     libswresample-dev \
     libssl-dev \
-    # Install dependencies for PCL
-    libflann-dev \ 
-    libusb-1.0-0-dev \
-    liblz4-dev \
-    libgtest-dev \
-    libopenni-dev \
-    libgdal-dev \
-    libosmesa6-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # cmake
@@ -53,56 +45,7 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1
     chmod +x /cmake-3.22.1.sh && \
     /cmake-3.22.1.sh --skip-license --prefix=/usr/local
 
-# pcl1.14.1
-# 安装 VTK 9.3
-RUN mkdir /vtk && cd /vtk && \
-    wget https://github.com/Kitware/VTK/archive/refs/tags/v9.3.0.zip -O vtk-9.3.0.zip && \
-    unzip vtk-9.3.0.zip && \
-    rm vtk-9.3.0.zip
 
-RUN cd /vtk/VTK-9.3.0 && \
-    mkdir build && cd build && \
-    cmake -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_INSTALL_PREFIX=/usr/local \
-        -DVTK_RENDERING_BACKEND=OpenGL2 \
-        -DVTK_USE_X=OFF \
-        -DVTK_USE_COCOA=OFF \
-        -DVTK_USE_OPENGL2=ON \
-        -DBUILD_SHARED_LIBS=ON \
-        -DVTK_USE_SYSTEM_GLFW=ON \
-        -DBUILD_EXAMPLES=OFF \
-        -DVTK_OPENGL_HAS_OSMESA=ON \
-        -DVTK_USE_OSMESA=OFF \ 
-          .. && \
-    make -j$(nproc) && \
-    make install
-
-# Download PCL 1.14.1 and compile it
-RUN wget https://github.com/PointCloudLibrary/pcl/archive/refs/tags/pcl-1.14.1.tar.gz -O pcl-1.14.1.tar.gz && \
-    tar -xvzf pcl-1.14.1.tar.gz && \
-    rm pcl-1.14.1.tar.gz
-
-RUN apt-get update && apt-get install -y \
-    libx11-dev \
-    qt5-qmake \
-    qtbase5-dev \
-    freeglut3-dev \
-    libpcap-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-
-# Build PCL
-RUN cd pcl-pcl-1.14.1 && \
-    mkdir build && \
-    cd build && \
-    cmake -DCMAKE_BUILD_TYPE=Release \
-        -DWITH_PCL_VISUALIZATION=OFF \
-        -DBUILD_visualization=OFF \
-        -DBUILD_tools=OFF \
-        .. && \
-    make -j$(nproc) && \
-    make install && \
-    ldconfig
 
 # libtorch
 RUN cd / && \

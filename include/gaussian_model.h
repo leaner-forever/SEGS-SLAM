@@ -40,20 +40,10 @@
 #include "mlp.h"
 #include "embedding.h"
 
-#include <pcl/point_types.h>
-#include <pcl/point_cloud.h>
-#include <pcl/filters/voxel_grid.h>
-#include <pcl/octree/octree_pointcloud.h>
-#include <pcl/io/pcd_io.h>
-#include <pcl/common/common.h>
-#include <pcl/filters/passthrough.h>
-
 #include <torchscatter/scatter.h>
 #include <torchscatter/cuda/scatter_cuda.h>
 #include <torch/script.h> 
 
-using PointT = pcl::PointXYZRGB;
-using PointCloudT = pcl::PointCloud<PointT>;
 
 #define GAUSSIAN_MODEL_TENSORS_TO_VEC                        \
     this->Tensor_vec_anchor = {this->_anchor};              \
