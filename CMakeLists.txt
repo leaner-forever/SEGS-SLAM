@@ -18,7 +18,7 @@ set(CAFFE2_USE_CUDNN on)
 # Uncomment the following line if you want to solve CMake Warning "Failed to compute shorthash for libnvrtc.so"
 # set(PYTHON_EXECUTABLE "/usr/bin/python3")
 # set(Torch_DIR /home/lzy/workingspace/Photo-SLAM/Torch/libtorch/share/cmake/Torch)
-set(Torch_DIR /home/lzy/dependency/libtorch/share/cmake/Torch)
+# set(Torch_DIR /home/lzy/dependency/libtorch/share/cmake/Torch)
 
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS} -pthread")
