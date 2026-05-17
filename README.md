@@ -122,7 +122,7 @@ If you do not have LibTorch installed in system search paths, add one line befor
 
 **[Option 1] Conda**: If using Conda with compatible PyTorch:
 ```cmake
-# [For Jatson Orin] To install Pytorch in Jatson developer kit:
+# [For Jetson Orin] To install Pytorch in Jetson developer kit:
 # export TORCH_INSTALL=https://developer.download.nvidia.cn/compute/redist/jp/v511/pytorch/torch-2.0.0+nv23.05-cp38-cp38-linux_aarch64.whl
 # pip install --no-cache $TORCH_INSTALL
 
